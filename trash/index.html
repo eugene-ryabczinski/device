@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Device</title>
+</head>
+<body>
+	<header class="main-header">
+		
+		<nav class="main-header-nav">
+		
+			<ul class="user-navigation">
+				<li><span class="search">Поиск по сайту</span></li> <!-- имя и структура ? -->
+				<li><a href="" class="login-link">Вход</a></li>
+				<li><a href="" class="compare">Сравнить</a></li>
+				<li><a href="" class="cart">Корзина</a></li>
+			</ul>
+			
+			<ul class="site-navigation"> <!-- имя класса и структура-->
+			
+				<li class="catalog"><a href="">Каталог товаров</a> <!-- пробная структура. сомневаюсь -->
+					<ul class="catalog-list">
+						<li>Виртуальная реальность</li>
+						<li>Монопады для селфи</li>
+						<li>Экшн-камеры</li>
+					</ul>
+					<ul class="catalog-list">
+						<li>Фитнес-браслеты</li>
+						<li>Умные часы</li>
+					</ul>
+					<ul class="catalog-list">
+						<li>Квадракоптеры</li>
+					</ul>
+				</li>
+				<li><a href="">Доставка</a></li>
+				<li><a href="">гарантия</a></li>
+				<li><a href="">Контакты</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main class="main-content">
+		<section class="slider">
+			<div class="slider-list">
+				<div class="slider-item">
+					<p class="slider-product-photo"> <!-- добавил префикс родителя т.к. могут быть ешё эл с класом product-photo -->
+						<img src="" alt="">
+					</p>
+					<!-- может тут нужна ещё обёртка? -->
+					<h3 class="slider-product-title">Делай селфи, как Бен Стиллер</h3>
+					<p class="slider-product-description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
+					<a href="">Подробнее</a>
+					<table class="slider-product-specifications" border="1">
+						<tr><td>8,5 м</td><td>5 кг</td><td>Карбон</td></tr>
+						<tr><th>Длинна палки</th><th>Вес палки</th><th>Материал</th></tr>
+					</table>
+				</div>	
+			</div> <!-- end slider list -->
+<!-- 			куда воткнуть controls -->
+		</section>
+		
+		<section class="categories">  <!-- product-categories vs categories -->
+			<ul class="category-list">
+				<li class="category-item"> <!-- недоработаный вариант -->
+					<a href="">
+						<p class="category-photo">
+							<img src="" alt="">
+						</p>
+						<h3 class="category-title">
+							Виртуальная реальность
+						</h3>
+					</a>
+				</li>
+	<!--
+				<li class="product-item"> 
+					<a href="">
+						<p class="product-photo">
+							<img src="" alt="">
+						</p>
+						<h3 class="product-title">
+							виртуальная реальность
+						</h3>
+					</a>
+				</li>
+	-->
+			</ul>
+			
+		</section>
+		
+		<section class="services"> <!-- разберись с разметкой -->
+			<div class="services-controls">
+				<span>Доставка</span>
+				<span>Гарантия</span>
+				<span>Кредит</span>
+			</div>
+			<div class="services-list">
+				<div class="services-item">
+					<h3 class="service-title">
+						Доставка
+					</h3>
+					<p class="service-description">
+						Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
+					</p>
+				</div>
+			</div>
+		</section>
+		
+		<ul class="brand-list">
+			<li class="brand-item"><a href=""><img src="" alt="">DJI</a></li>
+			<li class="brand-item"><a href=""><img src="" alt="">SP Gadgets</a></li>
+			<li class="brand-item"><a href=""><img src="" alt="">GO Pro</a></li>
+			<li class="brand-item"><a href=""><img src="" alt="">vive</a></li>
+		</ul>
+	</main>	
+</body>
+</html>
