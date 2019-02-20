@@ -1,0 +1,34 @@
+@mixin reset-list() {
+	margin: 0;
+	padding: 0;
+	
+	list-style: none;
+}
+
+@mixin background-icon($image) {
+	background-image: url($image);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+@mixin site-nav-actns() {
+	&:hover,
+	&:focus {
+		opacity: 0.6;
+	}
+	
+	&:active {
+		opacity: 0.3;
+	}
+}
+
+@mixin footer-nav-actns() {
+	&:hover,
+	&:focus {
+		color: 255,255,255, 1;
+	}
+	
+	&:active {
+		color: 255,255,255, 0.3;
+	}
+}
