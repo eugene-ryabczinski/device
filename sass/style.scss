@@ -529,16 +529,19 @@ body {
 	}
 }
 
-.promo-slider__title {
+.site-title {
 	margin: 0;
-	margin-top: 85px;
-	margin-bottom: 30px;
 	padding: 0;
 
 	font-family: Gilroy;
 	font-weight: 800;
 	font-size: 47px;
-	line-height: 56px;
+	line-height: 50px;
+}
+
+.promo-slider__title {
+	margin-top: 85px;
+	margin-bottom: 30px;
 }
 
 .promo-slider__description {
@@ -821,8 +824,6 @@ body {
 .catalog__top-line {
 	// padding: 25px 0;
 	background-image: linear-gradient(to right, $gray 50%, #ebebeb 50%);
-
-	// background-color: $gray;
 }
 
 .catalog__wrapper {
@@ -1388,14 +1389,7 @@ body {
 }
 
 .services-list__title {
-	margin: 0;
 	margin-bottom: 35px;
-	padding: 0;
-
-	font-family: Gilroy;
-	font-weight: 800;
-	font-size: 47px;
-	line-height: 50px;
 }
 
 .services-list__summary {
@@ -1475,14 +1469,7 @@ body {
 }
 
 .about-us__title {
-	margin: 0;
 	margin-bottom: 50px;
-	padding: 0;
-
-	font-family: Gilroy;
-	font-weight: 800;
-	font-size: 47px;
-	line-height: 50px;
 }
 
 .about-us__summary {

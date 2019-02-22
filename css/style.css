@@ -489,15 +489,18 @@ body {
     background-color: white;
 }
 
-.promo-slider__title {
+.site-title {
     margin: 0;
-    margin-top: 85px;
-    margin-bottom: 30px;
     padding: 0;
     font-family: Gilroy;
     font-weight: 800;
     font-size: 47px;
-    line-height: 56px;
+    line-height: 50px;
+}
+
+.promo-slider__title {
+    margin-top: 85px;
+    margin-bottom: 30px;
 }
 
 .promo-slider__description {
@@ -1265,13 +1268,7 @@ body {
 }
 
 .services-list__title {
-    margin: 0;
     margin-bottom: 35px;
-    padding: 0;
-    font-family: Gilroy;
-    font-weight: 800;
-    font-size: 47px;
-    line-height: 50px;
 }
 
 .services-list__summary {
@@ -1338,13 +1335,7 @@ body {
 }
 
 .about-us__title, .contacts__title {
-    margin: 0;
     margin-bottom: 50px;
-    padding: 0;
-    font-family: Gilroy;
-    font-weight: 800;
-    font-size: 47px;
-    line-height: 50px;
 }
 
 .about-us__summary, .contacts__text {
