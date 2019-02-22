@@ -5,6 +5,27 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/normalize.css">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=036deeae-a7be-4824-882c-6bf54052fbe7&lang=ru_RU" type="text/javascript"></script>
+	<script type="text/javascript">
+	    ymaps.ready(init);
+	    function init(){ 
+	        var myMap = new ymaps.Map("site-map", {
+	            center: [59.93863106, 30.32305450],
+	            zoom: 16,
+	            controls: ['fullscreenControl','zoomControl']
+	        }), 
+	        
+	        fullscreenControlObj = myMap.controls.get('fullscreenControl');
+	        fullscreenControlObj.options.set('float', 'left');
+        
+	        var myPlacemark = new ymaps.Placemark([59.93863106, 30.32305450], {
+		        balloonContent: 'Техномарт<br><b>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</b> <br>8 812 450-25-25',
+		        hintContent: 'Техномарт'
+	        });
+	     
+			myMap.geoObjects.add(myPlacemark);
+	    }
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -183,5 +204,34 @@
 			</div>
 		</div>
 	</footer>
+
+	<section class="modal feedback container">
+		<button class="modal__close feedback__close" aria-label="Закрыть"></button>
+		<form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
+			<p class="feedback__input-wrapper">
+				<label class="feedback__label">Ваше имя
+					<input type="text" class="feedback__input" name="name" placeholder="Имя Фамилия" required>
+				</label>
+			</p>
+			<p class="feedback__input-wrapper">
+				<label class="feedback__label">Ваш e-mail
+					<input type="email" class="feedback__input" name="email" placeholder="email@example.com" required>
+				</label>
+			</p>
+			<p class="feedback__input-wrapper">
+				<label class="feedback__label">Текст письма
+					<textarea class="feedback__input feedback__textarea" cols="30" rows="5" name="message" placeholder="В свободной форме"></textarea>
+				</label>	
+			</p>
+			<button class="feedback__submit site-button" type="submit">Отправить</button>
+		</form>
+	</section>
+
+	<section class="modal modal-map">
+		<h2 class="visually-hidden">Наш адрес: г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</h2>
+		<div id="site-map" class="modal-map__container"></div>
+		<button class="modal__close modal-map__close" type="button"></button>
+	</section>
+
 	</body>
 </html>
