@@ -19,8 +19,8 @@
 	        fullscreenControlObj.options.set('float', 'left');
         
 	        var myPlacemark = new ymaps.Placemark([59.93863106, 30.32305450], {
-		        balloonContent: 'Техномарт<br><b>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</b> <br>8 812 450-25-25',
-		        hintContent: 'Техномарт'
+		        balloonContent: 'Девайс<br><b>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</b> <br>8 812 450-25-25',
+		        hintContent: 'Девайс'
 	        });
 	     
 			myMap.geoObjects.add(myPlacemark);
@@ -39,7 +39,7 @@
 						<button class="site-search__submit">Найти</button>
 					</form>
 					<ul class="main-navigation__user user-navigation">
-						<li class="user-navigation__item"><a href="#" class="user-navigation__link user-navigation__link--profile">Вася</a></li>
+						<li class="user-navigation__item"><a href="#" class="user-navigation__link user-navigation__link--profile">Войти</a></li>
 					</ul>
 					<ul class="main-navigation__shopping shopping-navigation">
 						<li class="shopping-navigation__item"><a href="#" class="shopping-navigation__link shopping-navigation__link--compare">Сравнить</a></li>
@@ -69,8 +69,40 @@
 	<main class="page-main">
 		<section class="promo-slider container">
 			<ul class="promo-slider__list">
-				<li class="promo-slider__item">
+				<li class="promo-slider__item promo-slider__item--show">
 					<div class="promo-slider__image-wrapper"><img class="promo-slider__image" src="img/slide-3.png" alt="Картинка"></div>
+					<div class="promo-slider__contents">
+						<h3 class="promo-slider__title site-title">Порхает как бабочка, жалит как пчела!</h3>
+						<p class="promo-slider__description">Супер квадракоптеры</p>
+						<a href="#" class="promo-slider__link site-button">Подробнее</a>
+						<dl class="promo-slider__specs">
+							<div class="promo-slider__specs-wrapper">
+								<dt class="promo-slider__spec-name">Дальность полёта</dt>
+								<dd class="promo-slider__spec-description">800 м</dd>
+							</div>
+							<div class="promo-slider__specs-wrapper">
+								<dt class="promo-slider__spec-name">Радиус поражения</dt>
+								<dd class="promo-slider__spec-description">50 м</dd>
+							</div>
+						</dl>
+					</div>
+				</li>
+				<li class="promo-slider__item">
+					<div class="promo-slider__image-wrapper"><img class="promo-slider__image" src="img/slide-2.png" alt="Картинка"></div>
+					<div class="promo-slider__contents">
+						<h3 class="promo-slider__title site-title">Худеем <br>правильно!</h3>
+						<p class="promo-slider__description">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+						<a href="#" class="promo-slider__link site-button">Подробнее</a>
+						<dl class="promo-slider__specs">
+							<div class="promo-slider__specs-wrapper">
+								<dt class="promo-slider__spec-name">Без подзарядки</dt>
+								<dd class="promo-slider__spec-description">48 часов</dd>
+							</div>
+						</dl>
+					</div>
+				</li>
+				<li class="promo-slider__item">
+					<div class="promo-slider__image-wrapper"><img class="promo-slider__image" src="img/slide-1.png" alt="Картинка"></div>
 					<div class="promo-slider__contents">
 						<h3 class="promo-slider__title site-title">Делай селфи, как Бен Стиллер!</h3>
 						<p class="promo-slider__description">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.</p>
@@ -115,13 +147,13 @@
 				<div class="services__wrapper">
 					<ul class="services__toggles services-tab">
 						<li class="services-tab__item">
-							<a href="#" class="services-tab__link site-button">Доставка</a>
+							<a href="#" class="services-tab__link services-tab__link--current site-button">Доставка</a>
 							<a href="#" class="services-tab__link site-button">Гарантия</a>
 							<a href="#" class="services-tab__link site-button">Кредит</a>
 						</li>
 					</ul>
 					<ul class="services__description services-list">
-						<li class="services-list__item services-list__item--delivery">
+						<li class="services-list__item services-list__item--show services-list__item--delivery">
 							<h3 class="services-list__title site-title">Доставка</h3>
 							<p class="services-list__summary">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
 						</li>
@@ -129,7 +161,7 @@
 							<h3 class="services-list__title site-title">Гарантия</h3>
 							<p class="services-list__summary">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
 						</li>
-						<li class="services-list__item services-list__item--credit services-list__item--show">
+						<li class="services-list__item services-list__item--credit">
 							<h3 class="services-list__title site-title">Качество</h3>
 							<p class="services-list__summary">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется.</p>
 						</li>
@@ -210,12 +242,12 @@
 		<form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
 			<p class="feedback__input-wrapper">
 				<label class="feedback__label">Ваше имя
-					<input type="text" class="feedback__input" name="name" placeholder="Имя Фамилия" required>
+					<input type="text" class="feedback__input" name="name" placeholder="Имя Фамилия">
 				</label>
 			</p>
 			<p class="feedback__input-wrapper">
 				<label class="feedback__label">Ваш e-mail
-					<input type="email" class="feedback__input" name="email" placeholder="email@example.com" required>
+					<input type="email" class="feedback__input" name="email" placeholder="email@example.com">
 				</label>
 			</p>
 			<p class="feedback__input-wrapper">
@@ -233,5 +265,7 @@
 		<button class="modal__close modal-map__close" type="button"></button>
 	</section>
 
-	</body>
+	<div class="overlay"></div>
+	<script src="js/script.js"></script>
+</body>
 </html>
