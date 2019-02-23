@@ -29,6 +29,17 @@ module.exports = function (grunt) {
 			}
 		},
 
+		csscomb: {
+			dist: {
+				options: {
+					config: '.csscomb.json'
+				},
+				files: {
+					'css/style.css': ['css/style.css']
+				}
+			}
+		},
+
 		csso: {
 			compress: {
 				options: {
@@ -40,26 +51,41 @@ module.exports = function (grunt) {
 			}
 		},
 
+		browserSync: {
+			dev: {
+				bsFiles: {
+					src: ['css/*.css', '*.html']
+				},
+				options: {
+					watchTask: true,
+					server: ''
+				}
+			}
+		},
+
 		watch: {
 			options: {
 				spawn: false
 			},
 			scripts: {
 				files: ['sass/*.scss'],
-				tasks: ['sass', 'postcss', 'csso'] // пишем какие задачи будем запускать когда какой-либо файл scss изменён. наприемр так ['sass', 'postcss'] и т.д.
+				tasks: ['sass', 'postcss', 'csscomb', 'csso'] // пишем какие задачи будем запускать когда какой-либо файл scss изменён. наприемр так ['sass', 'postcss'] и т.д.
 			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-postcss');
+	grunt.loadNpmTasks('grunt-csscomb');
 	grunt.loadNpmTasks('grunt-csso');
+	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	// Есть плагин котрый делает это автоматически
 
-	grunt.registerTask('default', ['sass', 'watch']);
+	grunt.registerTask('default', ['browserSync', 'watch']);
+	// м.б. sass тут не обязателен если есть watch?
+	// уточни куда класть browserSync. в registerTask или добваить его в watcher? 
 };
-
 
 /*
 		concat: {

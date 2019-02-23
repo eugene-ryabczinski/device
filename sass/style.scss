@@ -57,9 +57,9 @@ body {
 	font-family: OpenSans;
 	font-weight: 300;
 	color: black;
-
+	
 	background-color: white;
-
+	
 	margin: 0;
 }
 
@@ -295,13 +295,6 @@ body {
 	&--logout {
 		color: rgba(0,0,0, 0.6);
 	}
-	/*
-	&--footer {
-		color: rgba(255,255,255, 0.7);
-
-		@include footer-nav-actns();
-	}
-*/
 }
 
 .shopping-navigation {
