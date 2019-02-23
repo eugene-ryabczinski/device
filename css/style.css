@@ -256,6 +256,13 @@ body {
   line-height: 30px;
   color: black;
   text-decoration: none;
+  /*
+	&--footer {
+		color: rgba(255,255,255, 0.7);
+
+		@include footer-nav-actns();
+	}
+*/
 }
 
 .user-navigation__link:hover,
