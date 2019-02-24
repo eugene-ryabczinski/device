@@ -79,6 +79,17 @@ module.exports = function (grunt) {
 					],
 					dest: 'build/'
 				}]
+			},
+
+			html: {
+				files: [{
+					expand: true,
+					cwd: '',
+	  				src: [
+						'*.html'
+					],
+					dest: 'build/'
+				}]
 			}
 		},
 
@@ -86,6 +97,12 @@ module.exports = function (grunt) {
 			options: {
 				spawn: false
 			},
+
+			// html: {
+			// 	files: ['*.html'],
+			// 	tasks: ['copy:html']
+			// },
+
 			scripts: {
 				files: ['sass/*.scss'],
 				tasks: ['sass', 'postcss', 'csscomb', 'csso'] // пишем какие задачи будем запускать когда какой-либо файл scss изменён. наприемр так ['sass', 'postcss'] и т.д.
@@ -104,7 +121,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	// Есть плагин котрый делает это автоматически
 
-	grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('default', ['browserSync', 'watch:scripts']);
 
 	// м.б. sass тут не обязателен если есть watch?
 	// уточни куда класть browserSync. в registerTask или добваить его в watcher?
