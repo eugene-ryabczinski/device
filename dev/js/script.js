@@ -93,7 +93,7 @@ if (typeof (slides) != "undefined" && slides !== null && slides.length !== 0) {
 	var sliderContainer = document.querySelector(".promo-slider__list");
 	var sliderToggles = document.querySelectorAll(".slider-toggles__button");
 	var sliderCurrentIndex = 0;
-	var sliderTimer = 6000;
+	var sliderTimer = 8000;
 
 	var sliderInit = function () {
 		if (!(slides[0].classList.contains('promo-slider__item--show')) || !(sliderToggles[0].classList.contains('slider-toggles__button--current'))) {

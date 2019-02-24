@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				files: {
-					'css/style.css': 'sass/style.scss'
+					'build/css/style.css': 'dev/sass/style.scss'
 				}
 			}
 		},
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 				]
 			},
 			dist: {
-				src: 'css/*.css'
+				src: 'build/css/*.css'
 			}
 		},
 
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
 					config: '.csscomb.json'
 				},
 				files: {
-					'css/style.css': ['css/style.css']
+					'build/css/style.css': ['build/css/style.css'] // 'dest/resorted.css': ['src.orgiginal.css']
 				}
 			}
 		},
@@ -46,7 +46,7 @@ module.exports = function (grunt) {
 					report: 'gzip'
 				},
 				files: {
-					'css/style.min.css': ['css/style.css']
+					'build/css/style.min.css': ['build/css/style.css'] // 'output.css': ['input.css']
 				}
 			}
 		},
@@ -54,11 +54,11 @@ module.exports = function (grunt) {
 		browserSync: {
 			dev: {
 				bsFiles: {
-					src: ['css/*.css', '*.html']
+					src: ['build/css/*.css', 'build/*.html', 'build/js/*.js']
 				},
 				options: {
 					watchTask: true,
-					server: ''
+					server: 'build'
 				}
 			}
 		},
@@ -71,11 +71,12 @@ module.exports = function (grunt) {
 			build: {
 				files: [{
 					expand: true,
-					cwd: '',
+					cwd: 'dev',
 	  				src: [
 						'fonts/**/*.{woff,woff2}',
 						'img/**',
-						'js/**'
+						'js/**',
+						'css/**'
 					],
 					dest: 'build/'
 				}]
@@ -84,9 +85,20 @@ module.exports = function (grunt) {
 			html: {
 				files: [{
 					expand: true,
-					cwd: '',
+					cwd: 'dev',
 	  				src: [
 						'*.html'
+					],
+					dest: 'build/'
+				}]
+			},
+
+			script: {
+				files: [{
+					expand: true,
+					cwd: 'dev',
+	  				src: [
+						'js/**'
 					],
 					dest: 'build/'
 				}]
@@ -98,30 +110,43 @@ module.exports = function (grunt) {
 				spawn: false
 			},
 
-			// html: {
-			// 	files: ['*.html'],
-			// 	tasks: ['copy:html']
-			// },
-
-			scripts: {
-				files: ['sass/*.scss'],
+			style: {
+				files: ['dev/sass/*.scss'],
 				tasks: ['sass', 'postcss', 'csscomb', 'csso'] // пишем какие задачи будем запускать когда какой-либо файл scss изменён. наприемр так ['sass', 'postcss'] и т.д.
+			},
+
+			html: {
+				files: ['dev/*.html'],
+				tasks: ['copy:html']
+			},
+
+			script: {
+				files: ['dev/js/*.js'],
+				tasks: ['copy:script']
 			}
 		}
 	});
 
+	// Есть плагин котрый делает это автоматически
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-csscomb');
 	grunt.loadNpmTasks('grunt-csso');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	// Есть плагин котрый делает это автоматически
 
-	grunt.registerTask('default', ['browserSync', 'watch:scripts']);
+	// grunt.registerTask('default', ['browserSync', 'watch']);
+	grunt.registerTask('serve', ['browserSync', 'watch']);
+	grunt.registerTask('build', [
+		'clean',
+		'copy',
+		'sass',
+		'postcss',
+		'csscomb',
+		'csso'
+	]);
 
 	// м.б. sass тут не обязателен если есть watch?
 	// уточни куда класть browserSync. в registerTask или добваить его в watcher?
