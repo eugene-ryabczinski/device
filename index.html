@@ -7,24 +7,24 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<script src="https://api-maps.yandex.ru/2.1/?apikey=036deeae-a7be-4824-882c-6bf54052fbe7&lang=ru_RU" type="text/javascript"></script>
 	<script type="text/javascript">
-	    ymaps.ready(init);
-	    function init(){
-	        var myMap = new ymaps.Map("site-map", {
-	            center: [59.93863106, 30.32305450],
-	            zoom: 16,
-	            controls: ['fullscreenControl','zoomControl']
-	        }),
+		ymaps.ready(init);
+		function init(){
+			var myMap = new ymaps.Map("site-map", {
+				center: [59.93863106, 30.32305450],
+				zoom: 16,
+				controls: ['fullscreenControl','zoomControl']
+			}),
 
-	        fullscreenControlObj = myMap.controls.get('fullscreenControl');
-	        fullscreenControlObj.options.set('float', 'left');
+			fullscreenControlObj = myMap.controls.get('fullscreenControl');
+			fullscreenControlObj.options.set('float', 'left');
 
-	        var myPlacemark = new ymaps.Placemark([59.93863106, 30.32305450], {
-		        balloonContent: 'Девайс<br><b>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</b> <br>8 812 450-25-25',
-		        hintContent: 'Девайс'
-	        });
+			var myPlacemark = new ymaps.Placemark([59.93863106, 30.32305450], {
+				balloonContent: 'Девайс<br><b>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</b> <br>8 812 450-25-25',
+				hintContent: 'Девайс'
+			});
 
 			myMap.geoObjects.add(myPlacemark);
-	    }
+		}
 	</script>
 </head>
 <body>

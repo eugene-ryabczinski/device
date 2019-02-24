@@ -187,5 +187,4 @@ if (typeof (servicesList) != "undefined" && servicesList !== null && servicesLis
 	for (var i = 0; i < servicesTabs.length; i++) {
 		moveTabIndex(i, servicesTabs[i]);
 	}
-
 }

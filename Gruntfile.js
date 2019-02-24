@@ -63,6 +63,25 @@ module.exports = function (grunt) {
 			}
 		},
 
+		clean: {
+			build: ['build']
+		},
+
+		copy: {
+			build: {
+				files: [{
+					expand: true,
+					cwd: '',
+	  				src: [
+						'fonts/**/*.{woff,woff2}',
+						'img/**',
+						'js/**'
+					],
+					dest: 'build/'
+				}]
+			}
+		},
+
 		watch: {
 			options: {
 				spawn: false
@@ -80,11 +99,15 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-csso');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	// Есть плагин котрый делает это автоматически
 
 	grunt.registerTask('default', ['browserSync', 'watch']);
+
 	// м.б. sass тут не обязателен если есть watch?
-	// уточни куда класть browserSync. в registerTask или добваить его в watcher? 
+	// уточни куда класть browserSync. в registerTask или добваить его в watcher?
 };
 
 /*
