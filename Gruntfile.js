@@ -147,9 +147,6 @@ module.exports = function (grunt) {
 		'csscomb',
 		'csso'
 	]);
-
-	// м.б. sass тут не обязателен если есть watch?
-	// уточни куда класть browserSync. в registerTask или добваить его в watcher?
 };
 
 /*
