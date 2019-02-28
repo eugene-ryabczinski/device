@@ -41,10 +41,16 @@ if (typeof (feedbackModal) != "undefined" && feedbackModal !== null) {
 				feedbackName.offsetWidth = feedbackName.offsetWidth;
 				feedbackName.classList.add("feedback__input--error");
 			}
+			else {
+				feedbackName.classList.remove("feedback__input--error");
+			}
 
 			if (!feedbackEmail.value) {
 				feedbackEmail.classList.remove("feedback__input--error");
 				feedbackEmail.offsetWidth = feedbackEmail.offsetWidth;
+				feedbackEmail.classList.add("feedback__input--error");
+			}
+			else {
 				feedbackEmail.classList.add("feedback__input--error");
 			}
 		}
@@ -89,7 +95,6 @@ var modalClosing = function () {
 
 var slides = document.querySelectorAll(".promo-slider__item");
 if (typeof (slides) != "undefined" && slides !== null && slides.length !== 0) {
-
 	var sliderContainer = document.querySelector(".promo-slider__list");
 	var sliderToggles = document.querySelectorAll(".slider-toggles__button");
 	var sliderCurrentIndex = 0;
@@ -101,6 +106,14 @@ if (typeof (slides) != "undefined" && slides !== null && slides.length !== 0) {
 			sliderToggles[0].classList.add('slider-toggles__button--current');
 		}
 		sliderCurrentIndex = 0;
+
+		var sliderNumber = []; // докоративный элемент. счётчик слайда
+		for (var j = 0; j < slides.length; j++) {
+			sliderNumber[j] = document.createElement('div');
+			sliderNumber[j].classList.add("promo-slider__counter");
+			sliderNumber[j].innerHTML = '0'+(j+1);
+			slides[j].insertBefore(sliderNumber[j], slides[j].firstChild);
+		}
 	}
 	sliderInit();
 
