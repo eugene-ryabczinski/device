@@ -33,7 +33,7 @@
 			<a class="page-header__logo-link"><img class="page-header__logo-image" src="img/logo.svg" width="163" height="35" alt="Логотип Device"></a>
 			<nav class="main-navigation">
 				<div class="main-navigation__wrapper">
-					<form class="main-navigation__search site-search action="https://echo.htmlacademy.ru" method="post"">
+					<form class="main-navigation__search site-search" action="https://echo.htmlacademy.ru" method="post">
 						<label class="visually-hidden" for="site-search">Поиск по сайту</label>
 						<input type="search" class="site-search__input" id="site-search" placeholder="Поиск по сайту">
 						<button class="site-search__submit">Найти</button>
@@ -68,6 +68,7 @@
 
 	<main class="page-main">
 		<section class="promo-slider container">
+			<h2 class="visually-hidden">Промо слайдер</h2>
 			<ul class="promo-slider__list">
 				<li class="promo-slider__item promo-slider__item--show">
 					<div class="promo-slider__image-wrapper"><img class="promo-slider__image" src="img/slide-3.png" alt="Картинка"></div>
@@ -123,15 +124,16 @@
 						</dl>
 					</div>
 				</li>
-				<div class="promo-slider__toggles slider-toggles">
-					<button class="slider-toggles__button slider-toggles__button--current" aria-label="Переключатель слайла"></button>
-					<button class="slider-toggles__button" aria-label="Переключатель слайла"></button>
-					<button class="slider-toggles__button" aria-label="Переключатель слайла"></button>
-				</div>
 			</ul>
+			<div class="promo-slider__toggles slider-toggles">
+				<button class="slider-toggles__button slider-toggles__button--current" aria-label="Переключатель слайла"></button>
+				<button class="slider-toggles__button" aria-label="Переключатель слайла"></button>
+				<button class="slider-toggles__button" aria-label="Переключатель слайла"></button>
+			</div>
 		</section>
 
 		<section class="popular-products container">
+			<h2 class="visually-hidden">Популярные товары</h2>
 			<ul class="popular-products__list">
 				<li class="popular-products__item"><a href="#" class="popular-products__link popular-products__link--vr">Виртуалная реальность</a></li>
 				<li class="popular-products__item"><a href="#" class="popular-products__link popular-products__link--pads">Монопады для селфи</a></li>
@@ -143,6 +145,7 @@
 		</section>
 
 		<section class="services">
+			<h2 class="visually-hidden">Сервисы</h2>
 			<div class="container">
 				<div class="services__wrapper">
 					<ul class="services__toggles services-tab">
@@ -171,6 +174,7 @@
 		</section>
 
 		<section class="partners container">
+			<h2 class="visually-hidden">Партнёры</h2>
 			<ul class="partners__list">
 				<li class="partners__item"><a href="#" class="partners__link partners__link--dji"><img src="img/partners-dji-sprite.png" width="300" height="200" alt="Картинка" class="partners__image"></a></li>
 				<li class="partners__item"><a href="#" class="partners__link partners__link--spgagets"><img src="img/partners-sp-sprite.png" width="300" height="200" alt="Картинка" class="partners__image"></a></li>
@@ -238,6 +242,7 @@
 	</footer>
 
 	<section class="modal feedback container">
+		<h2 class="visually-hidden">Напишите нам</h2>
 		<button class="modal__close feedback__close" aria-label="Закрыть"></button>
 		<form class="feedback__form" action="https://echo.htmlacademy.ru" method="post">
 			<p class="feedback__input-wrapper">
